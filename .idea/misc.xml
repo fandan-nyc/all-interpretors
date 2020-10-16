@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CheckStyle-IDEA-workspace">
+    <option name="configuration">
+      <map>
+        <entry key="last-active-plugin-version" value="5.19.0" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="libraryTable">
+    <library name="flink">
+      <ANNOTATIONS>
+        <root url="file://$PROJECT_DIR$/../flink" />
+      </ANNOTATIONS>
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/../flink" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/../flink/flink-annotations/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-clients/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-clients/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-cassandra/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-cassandra/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-elasticsearch-base/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-elasticsearch-base/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-elasticsearch/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-elasticsearch/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-elasticsearch2/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-elasticsearch2/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-elasticsearch5/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-elasticsearch5/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-filesystem/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-filesystem/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-kafka-0.10/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-kafka-0.10/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-kafka-0.11/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-kafka-0.11/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-kafka-0.8/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-kafka-0.8/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-kafka-0.9/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-kafka-0.9/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-kafka-base/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-kafka-base/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-kinesis/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-kinesis/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-nifi/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-nifi/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-rabbitmq/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-rabbitmq/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-connector-twitter/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-hadoop-compatibility/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-hadoop-compatibility/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-hbase/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-hbase/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-hcatalog/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-jdbc/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-jdbc/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-orc/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-connectors/flink-orc/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-contrib/flink-connector-wikiedits/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-contrib/flink-connector-wikiedits/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-contrib/flink-storm-examples/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-contrib/flink-storm-examples/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-contrib/flink-storm/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-contrib/flink-storm/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-core/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-core/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-dist/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-docs/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-docs/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-end-to-end-tests/flink-bucketing-sink-test/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-end-to-end-tests/flink-dataset-allround-test/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-end-to-end-tests/flink-datastream-allround-test/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-end-to-end-tests/flink-distributed-cache-via-blob-test/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-end-to-end-tests/flink-elasticsearch1-test/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-end-to-end-tests/flink-elasticsearch2-test/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-end-to-end-tests/flink-elasticsearch5-test/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-end-to-end-tests/flink-high-parallelism-iterations-test/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-end-to-end-tests/flink-local-recovery-and-allocation-test/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-end-to-end-tests/flink-parent-child-classloading-test/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-end-to-end-tests/flink-stream-sql-test/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-end-to-end-tests/flink-stream-stateful-job-upgrade-test/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-examples/flink-examples-batch/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-examples/flink-examples-streaming/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-examples/flink-examples-streaming/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-examples/flink-examples-table/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-filesystems/flink-hadoop-fs/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-filesystems/flink-hadoop-fs/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-filesystems/flink-mapr-fs/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-filesystems/flink-mapr-fs/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-filesystems/flink-s3-fs-hadoop/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-filesystems/flink-s3-fs-hadoop/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-filesystems/flink-s3-fs-presto/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-filesystems/flink-s3-fs-presto/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-filesystems/flink-swift-fs-hadoop/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-filesystems/flink-swift-fs-hadoop/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-formats/flink-avro-confluent-registry/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-formats/flink-avro-confluent-registry/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-formats/flink-avro/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-formats/flink-avro/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-formats/flink-json/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-formats/flink-json/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-fs-tests/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-java/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-java/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-java8/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-java8/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-cep/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-cep/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-gelly-examples/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-gelly-examples/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-gelly/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-gelly/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-python/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-python/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-sql-client/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-sql-client/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-streaming-python/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-streaming-python/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-table/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-libraries/flink-table/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-mesos/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-mesos/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-core/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-core/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-datadog/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-datadog/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-dropwizard/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-dropwizard/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-ganglia/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-graphite/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-jmx/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-jmx/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-prometheus/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-prometheus/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-slf4j/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-slf4j/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-statsd/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-metrics/flink-metrics-statsd/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-optimizer/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-optimizer/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-queryable-state/flink-queryable-state-client-java/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-queryable-state/flink-queryable-state-client-java/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-queryable-state/flink-queryable-state-runtime/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-queryable-state/flink-queryable-state-runtime/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-runtime-web/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-runtime-web/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-runtime/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-runtime/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-scala-shell/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-scala-shell/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-scala/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-state-backends/flink-statebackend-rocksdb/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-state-backends/flink-statebackend-rocksdb/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-streaming-java/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-streaming-java/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-streaming-scala/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-test-utils-parent/flink-test-utils-junit/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-test-utils-parent/flink-test-utils-junit/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-test-utils-parent/flink-test-utils/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-test-utils-parent/flink-test-utils/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-tests/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-yarn-tests/src/test/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-yarn/src/main/java" />
+        <root url="file://$PROJECT_DIR$/../flink/flink-yarn/src/test/java" />
+      </SOURCES>
+    </library>
+  </component>
+</project>
