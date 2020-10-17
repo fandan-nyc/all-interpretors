@@ -11,12 +11,6 @@ public class Token {
     this.lineNumber = line;
   }
 
-  public int getLineNumber() {
-    return lineNumber
-  }
-
-  ;
-
   public boolean isNumber() {
     return false;
   }
@@ -31,6 +25,10 @@ public class Token {
 
   public int getNumber() {
     throw new StoneException("not number token");
+  }
+
+  public int getLineNumber() {
+    return lineNumber;
   }
 
   public String getText() {
