@@ -14,7 +14,7 @@ public class Lexer {
   private static String SPACE = "\\s*";  // in regular expression, we need to
   private static String COMMENT = "(//.*)";
   private static String NUMBER_LITERAL = "([0-9]+)";
-  private static String STRING_LITERAL = "(\"(\\\"|\\\\|\\\\n|[^\"])*\")";
+  private static String STRING_LITERAL = "(\"(\\\\\"|\\\\\\\\|\\\\n|[^\"])*\")";
 
   // start with "
   // there are 4 conditions in the middle:
@@ -23,7 +23,7 @@ public class Lexer {
   // c.  \n
   // d. anything not starting with "
   // end with "
-  private static String VAR_NAME = "[A-Za-z][A-Za-z0-9)*";
+  private static String VAR_NAME = "[A-Za-z][A-Za-z0-9]*";
   private static String SPECIAL_OPERATOR = "==|&&|\\|\\||>=|<=|\\p{Punct}";
   private static String regexPat = String
       .format("%s(%s|%s|%s|%s|%s)?", SPACE, COMMENT, NUMBER_LITERAL,
