@@ -7,7 +7,6 @@ type Token struct {
 	Literal string
 }
 
-
 const (
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
@@ -17,8 +16,15 @@ const (
 	INT   = "INT"
 
 	// operator
-	ASSIGN = "="
-	PLUS   = "+"
+	ASSIGN   = "="
+	PLUS     = "+"
+	MINUS    = "-"
+	BANG     = "!"
+	ASTERISK = "*"
+	SLASH    = "/"
+
+	LT = "<"
+	GT = ">"
 
 	// delimiters
 	COMMA     = ","
@@ -32,11 +38,21 @@ const (
 	// keywords
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
+	RETURN   = "RETURN"
+	IF       = "IF"
+	ELSE     = "ELSE"
+	TRUE     = "TRUE"
+	FALSE    = "FALSE"
 )
 
-var keywords = map[string]TokenType {
-	"fn": FUNCTION,
-	"let": LET,
+var keywords = map[string]TokenType{
+	"fn":     FUNCTION,
+	"let":    LET,
+	"true":   TRUE,
+	"false":  FALSE,
+	"return": RETURN,
+	"if":     IF,
+	"else":   ELSE,
 }
 
 func LookipIdent(ident string) TokenType {
