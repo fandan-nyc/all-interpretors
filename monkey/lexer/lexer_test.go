@@ -58,7 +58,10 @@ let result = add(five, ten);
        return true;
    } else {
        return false;
-}
+};
+
+10 == 10;
+10 != 9;
 `
 
 	tests := []struct {
@@ -101,11 +104,6 @@ let result = add(five, ten);
 		{token.IDENT, "ten"},
 		{token.RPAREN, ")"},
 		{token.SEMICOLON, ";"},
-		// if (5 < 10) {
-		//       return true;
-		//   } else {
-		//       return false;
-		//}
 		{token.IF, "if"},
 		{token.LPAREN, "("},
 		{token.INT, "5"},
@@ -123,6 +121,16 @@ let result = add(five, ten);
 		{token.FALSE, "false"},
 		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
+		{token.SEMICOLON, ";"},
+		{token.INT, "10"},
+		{token.EQ, "=="},
+		{token.INT, "10"},
+		{token.SEMICOLON, ";"},
+		{token.INT, "10"},
+		{token.NOT_EQ, "!="},
+		{token.INT, "9"},
+		{token.SEMICOLON, ";"},
+
 		{token.EOF, "\x00"},
 	}
 
@@ -132,11 +140,8 @@ let result = add(five, ten);
 		tok := l.NextToken()
 
 		if tok.Type != tt.expectedTokenType {
-			t.Fatalf("tests[%d] failed. expected %q, got %q", i, tt.expectedTokenType, tok.Type)
-		}
-
-		if tok.Literal != tt.expectedToken {
-			t.Fatalf("tests[%d] failed, expected %q, got %q", i, tt.expectedToken, tok.Literal)
+			t.Fatalf("tests[%d] failed. token type: expected %q, got %q; token: expected %q, got %q",
+				i, tt.expectedTokenType, tok.Type, tt.expectedToken, tok.Literal)
 		}
 	}
 }
