@@ -80,7 +80,7 @@ func (l *Lexer) NextToken() token.Token {
 	default:
 		if isLetter(l.ch) {
 			tok.Literal = l.readIdentifier()
-			tok.Type = token.LookipIdent(tok.Literal)
+			tok.Type = token.LookupIdent(tok.Literal)
 			return tok // early termination is important here. once we get an identifier, we should return the token
 			// the pointer are in the right place already
 		} else if isNumber(l.ch) {
@@ -127,6 +127,9 @@ func (l *Lexer) readIdentifier() string {
 }
 
 func (l *Lexer) skipWhitespace() {
+	if l.position >= len(l.input) {
+		return
+	}
 	l.checkHelper(isWhitespace)
 }
 
