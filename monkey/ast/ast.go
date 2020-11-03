@@ -56,3 +56,11 @@ func (lt *LetStatement) TokenLiteral() string { return lt.Token.Literal }
 
 // why the identifier is an Expression
 // this is just to keep things simple. identifier in other parts do produce values
+
+type ReturnStatement struct {
+	Token       token.Token
+	ReturnValue Expression
+}
+
+func (rs *ReturnStatement) StatementNode()       {}
+func (rs *ReturnStatement) TokenLiteral() string { return rs.Token.Literal }
