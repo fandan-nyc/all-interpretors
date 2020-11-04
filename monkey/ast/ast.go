@@ -40,8 +40,9 @@ func (p *Program) TokenLiteral() string {
 
 func (p *Program) String() string {
 	var out bytes.Buffer
-	for _, stat := range p.Statements {
-		out.WriteString(stat.String())
+
+	for _, stmt := range p.Statements {
+		out.WriteString(stmt.String())
 	}
 	return out.String()
 }
@@ -52,40 +53,30 @@ type LetStatement struct {
 	Value Expression
 }
 
+func (lt *LetStatement) StatementNode()       {}
+func (lt *LetStatement) TokenLiteral() string { return lt.Token.Literal }
+
+func (lt *LetStatement) String() string {
+	var out bytes.Buffer
+	out.WriteString(lt.TokenLiteral() + " ")
+	out.WriteString(lt.Name.String())
+	out.WriteString(" = ")
+
+	if lt.Value != nil {
+		out.WriteString(lt.Value.String())
+	}
+	out.WriteString(";")
+	return out.String()
+}
+
 type Identifier struct {
 	Token token.Token // this is IDENTIFIER
 	Value string
 }
 
-type ExpressionStatement struct {
-	Token      token.Token
-	Expression Expression
-}
-
-func (i *Identifier) TokenLiteral() string {
-	return i.Token.Literal
-}
-
-func (i *Identifier) ExpressionNode() {}
-func (i *Identifier) String() string  { return i.Value }
-
-func (lt *LetStatement) StatementNode() {}
-
-func (lt *LetStatement) TokenLiteral() string { return lt.Token.Literal }
-
-func (lt *LetStatement) String() string {
-	var out bytes.Buffer
-
-	out.WriteString(lt.TokenLiteral() + " ")
-	out.WriteString(lt.Name.String())
-	out.WriteString(" = ")
-	if lt.Value != nil {
-		out.WriteString(lt.Value.String())
-	}
-	out.WriteString(";")
-
-	return out.String()
-}
+func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
+func (i *Identifier) ExpressionNode()      {}
+func (i *Identifier) String() string       { return i.Value }
 
 // why the identifier is an Expression
 // this is just to keep things simple. identifier in other parts do produce values
@@ -104,8 +95,22 @@ func (rs *ReturnStatement) String() string {
 		out.WriteString(rs.ReturnValue.String())
 	}
 	out.WriteString(";")
-
 	return out.String()
+}
+
+// integer literal -> expression
+type IntegerLiteral struct {
+	Token token.Token
+	Value int64
+}
+
+func (il *IntegerLiteral) TokenLiteral() string { return il.Token.Literal }
+func (il *IntegerLiteral) expressionNode()      {}
+func (il *IntegerLiteral) String() string       { return il.Token.Literal }
+
+type ExpressionStatement struct {
+	Token      token.Token
+	Expression Expression
 }
 
 func (es *ExpressionStatement) StatementNode()       {}

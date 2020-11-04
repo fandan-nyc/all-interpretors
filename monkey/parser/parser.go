@@ -12,11 +12,11 @@ const (
 	_ int = iota
 	LOWEST
 	EQUALS      // ==
-	LESSGREATER // < >
+	LESSGREATER // > or <
 	SUM         // +
 	PRODUCT     // *
-	PREFIX      // - or !
-	CALL        // myfunc *
+	PREFIX      // -X or !X
+	CALL        // myFunction(X)
 )
 
 type (
@@ -37,8 +37,8 @@ type Parser struct {
 
 func New(l *lexer.Lexer) *Parser {
 	p := &Parser{l: l, errors: []string{}}
-	p.prefixParserFns = make(map[token.TokenType]prefixParserFn)
 	p.infixParserFns = make(map[token.TokenType]infixParserFn)
+	p.prefixParserFns = make(map[token.TokenType]prefixParserFn)
 
 	p.registerPrefix(token.IDENT, p.parseIdentifier)
 	// read two tokens, so curToken and peekToken are both set
@@ -47,12 +47,16 @@ func New(l *lexer.Lexer) *Parser {
 	return p
 }
 
-func (p *Parser) parseIdentifier() ast.Expression {
-	return &ast.Identifier{Token: p.curToken, Value: p.curToken.Literal}
-}
-
 func (p *Parser) registerPrefix(tokenType token.TokenType, fn prefixParserFn) {
 	p.prefixParserFns[tokenType] = fn
+}
+
+func (p *Parser) registerInfix(tokenType token.TokenType, fn infixParserFn) {
+	p.infixParserFns[tokenType] = fn
+}
+
+func (p *Parser) parseIdentifier() ast.Expression {
+	return &ast.Identifier{Token: p.curToken, Value: p.curToken.Literal}
 }
 
 func (p *Parser) Errors() []string {
@@ -95,16 +99,13 @@ func (p *Parser) ParseStatement() ast.Statement {
 	}
 }
 
-func (p *Parser) parseExpressionStatement() *ast.ExpressionStatement {
-	stmt := &ast.ExpressionStatement{Token: p.curToken}
-
-	stmt.Expression = p.parseExpression(LOWEST)
-
+func (p *Parser) parseExpressionStatement() ast.Statement {
+	expressionStat := &ast.ExpressionStatement{Token: p.curToken}
+	expressionStat.Expression = p.parseExpression(LOWEST)
 	if p.peekTokenIs(token.SEMICOLON) {
 		p.nextToken()
 	}
-
-	return stmt
+	return expressionStat
 }
 
 func (p *Parser) parseExpression(precedence int) ast.Expression {
@@ -112,8 +113,8 @@ func (p *Parser) parseExpression(precedence int) ast.Expression {
 	if prefix == nil {
 		return nil
 	}
-	leftExpre := prefix()
-	return leftExpre
+	leftExp := prefix()
+	return leftExp
 }
 
 func (p *Parser) parseReturnStatement() *ast.ReturnStatement {
