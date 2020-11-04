@@ -1,15 +1,18 @@
 package parser
 
 import (
+	"testing"
+
 	"github.com/fandan-nyc/all-interpretors/monkey/ast"
 	"github.com/fandan-nyc/all-interpretors/monkey/lexer"
-	"testing"
+	"github.com/fandan-nyc/all-interpretors/monkey/token"
 )
 
 func TestLetStatements(t *testing.T) {
 	input := `let x = 5;
 let y = 10;
 let foobar = 838383;`
+
 	l := lexer.New(input)
 	p := New(l)
 	program := p.ParseProgram()
@@ -73,7 +76,7 @@ return 992233;
 `
 	l := lexer.New(input)
 	p := New(l)
-git
+
 	program := p.ParseProgram()
 	checkParserErrors(t, p)
 
@@ -90,5 +93,33 @@ git
 		if rtStat.TokenLiteral() != "return" {
 			t.Errorf("return statement.TokenLiteral is not 'return', but %s", rtStat.TokenLiteral())
 		}
+	}
+}
+
+func TestIdentifierExpression(t *testing.T) {
+	data := `foobar`
+
+	l := lexer.New(data)
+	p := New(l)
+	program := p.ParseProgram()
+	checkParserErrors(t, p)
+
+	if len(program.Statements) != 1 {
+		t.Fatalf("length should be 1")
+	}
+
+	stmt, ok := program.Statements[0].(*ast.ExpressionStatement)
+	if !ok {
+		t.Fatal("cannot convert to expression statement")
+	}
+	ident, ok := stmt.Expression.(*ast.Identifier)
+	if !ok {
+		t.Fatal("cannot convert to identifier")
+	}
+	if ident.Token.Type != token.IDENT {
+		t.Fatalf("wrong identifier, expect IDENT, got %s", ident.TokenLiteral())
+	}
+	if ident.Value != "foobar" {
+		t.Fatalf("wrong value, got %s", ident.Value)
 	}
 }

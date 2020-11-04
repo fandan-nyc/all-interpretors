@@ -1,9 +1,14 @@
 package ast
 
-import "github.com/fandan-nyc/all-interpretors/monkey/token"
+import (
+	"bytes"
+
+	"github.com/fandan-nyc/all-interpretors/monkey/token"
+)
 
 type Node interface {
 	TokenLiteral() string
+	String() string
 }
 
 type Statement interface {
@@ -33,6 +38,14 @@ func (p *Program) TokenLiteral() string {
 	return ""
 }
 
+func (p *Program) String() string {
+	var out bytes.Buffer
+	for _, stat := range p.Statements {
+		out.WriteString(stat.String())
+	}
+	return out.String()
+}
+
 type LetStatement struct {
 	Token token.Token // this is LET
 	Name  *Identifier
@@ -44,15 +57,35 @@ type Identifier struct {
 	Value string
 }
 
+type ExpressionStatement struct {
+	Token      token.Token
+	Expression Expression
+}
+
 func (i *Identifier) TokenLiteral() string {
 	return i.Token.Literal
 }
 
-func (i *Identifier) ExpressionToken() {}
+func (i *Identifier) ExpressionNode() {}
+func (i *Identifier) String() string  { return i.Value }
 
 func (lt *LetStatement) StatementNode() {}
 
 func (lt *LetStatement) TokenLiteral() string { return lt.Token.Literal }
+
+func (lt *LetStatement) String() string {
+	var out bytes.Buffer
+
+	out.WriteString(lt.TokenLiteral() + " ")
+	out.WriteString(lt.Name.String())
+	out.WriteString(" = ")
+	if lt.Value != nil {
+		out.WriteString(lt.Value.String())
+	}
+	out.WriteString(";")
+
+	return out.String()
+}
 
 // why the identifier is an Expression
 // this is just to keep things simple. identifier in other parts do produce values
@@ -64,3 +97,22 @@ type ReturnStatement struct {
 
 func (rs *ReturnStatement) StatementNode()       {}
 func (rs *ReturnStatement) TokenLiteral() string { return rs.Token.Literal }
+func (rs *ReturnStatement) String() string {
+	var out bytes.Buffer
+	out.WriteString(rs.Token.Literal + " ")
+	if rs.ReturnValue != nil {
+		out.WriteString(rs.ReturnValue.String())
+	}
+	out.WriteString(";")
+
+	return out.String()
+}
+
+func (es *ExpressionStatement) StatementNode()       {}
+func (es *ExpressionStatement) TokenLiteral() string { return es.Token.Literal }
+func (es *ExpressionStatement) String() string {
+	if es.Expression != nil {
+		return es.Expression.String()
+	}
+	return ""
+}
