@@ -123,3 +123,33 @@ func TestIdentifierExpression(t *testing.T) {
 		t.Fatalf("wrong value, got %s", ident.Value)
 	}
 }
+
+func TestIntegerLiteralExpression(t *testing.T) {
+	input := "5;"
+
+	l := lexer.New(input)
+	p := New(l)
+	program := p.ParseProgram()
+	checkParserErrors(t, p)
+	if len(program.Statements) != 1 {
+		t.Fatalf("length should be 1, got %d", len(program.Statements))
+	}
+	statement := program.Statements[0]
+	es, ok := statement.(*ast.ExpressionStatement)
+	if !ok {
+		t.Fatalf("cannot convert to ExpressionStatement")
+	}
+	literal, ok := es.Expression.(*ast.IntegerLiteral)
+	if !ok {
+		t.Fatalf("cannot convert to IntegerLiteral")
+	}
+	if literal.Token.Type != token.INT {
+		t.Fatalf("token type should be INT")
+	}
+	if literal.TokenLiteral() != "5" {
+		t.Fatalf("token literal value should be 5")
+	}
+	if literal.Value != 5 {
+		t.Fatalf("token value should be int 5")
+	}
+}
