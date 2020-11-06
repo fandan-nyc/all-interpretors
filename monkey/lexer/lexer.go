@@ -108,9 +108,9 @@ func (l *Lexer) checkHelper(checkfunc func(byte) bool) string {
 }
 
 func isLetter(ch byte) bool {
-	var lower bool = 'a' <= ch && ch <= 'z'
-	var upper bool = 'A' <= ch && ch <= 'Z'
-	var underscore bool = ch == '_'
+	var lower = 'a' <= ch && ch <= 'z'
+	var upper = 'A' <= ch && ch <= 'Z'
+	var underscore = ch == '_'
 	return lower || upper || underscore
 }
 
